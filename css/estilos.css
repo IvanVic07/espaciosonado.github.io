@@ -1,0 +1,189 @@
+/* Estilos básicos para la barra de menú */
+.menu-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.menu-bar li {
+    float: left;
+}
+
+.menu-bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu-bar li a:hover {
+    background-color: #111;
+}
+
+/* Clase para el elemento del carrito */
+.menu-bar .cart-item {
+    float: right;
+}
+
+
+        /* Estilos básicos para las cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 300px; /* Ancho fijo para todas las tarjetas */
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block; /* Asegura que las tarjetas se muestren en línea */
+            vertical-align: top;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .card-price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card-text {
+            padding: 0 16px 16px;
+        }
+
+        /* Ajustes para la grilla de cards */
+        .card-container {
+            text-align: center;
+        }
+        .card-actions button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-actions button:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Estilos específicos para los botones de Detalles y Comprar */
+.card-actions button:first-child {
+    background-color: #f8f8f8;
+}
+
+.card-actions button:last-child {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Estilo para la ventana modal */
+.modal {
+    display: none; /* Ocultar la modal por defecto */
+    position: fixed; /* Mantenerla fija en la pantalla */
+    z-index: 1; /* Situarla sobre el resto de elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Anchura completa */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar el scroll si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo */
+    background-color: rgba(0,0,0,0.4); /* Negro con opacidad */
+}
+
+/* Contenido de la ventana modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% desde arriba y centrado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Podrías querer un ancho más pequeño para móviles */
+}
+
+/* El botón cerrar (x) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para el botón Agregar al carrito dentro de la ventana modal */
+.modal-content button {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Texto en blanco */
+    padding: 12px 24px; /* Espaciado interno */
+    margin: 10px 0; /* Margen exterior */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de mano al pasar por encima */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.modal-content button:hover {
+    background-color: #45a049; /* Color de fondo un poco más oscuro al pasar el cursor por encima */
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea los elementos al principio de la flex container */
+    gap: 20px; /* Espacio entre la imagen y el contenedor de texto */
+}
+
+.modal-image {
+    flex: 1; /* Permite que la imagen crezca y ocupe espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra la imagen en su contenedor */
+    align-items: center;
+}
+
+.modal-text-container {
+    flex: 2; /* Permite que el contenedor de texto crezca y ocupe más espacio que la imagen */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    overflow: auto; /* Asegura que todo el contenido sea accesible en pantallas pequeñas */
+}
+
+/* Estilos para el botón */
+.modal-text-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-text-container button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Espacio Soñado</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- Barra de menú -->
+<ul class="menu-bar">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="">Lista de deseos</a></li>
+    <li><a href="">Contacto</a></li>
+    <li><a href="">Acerca de</a></li>
+    <!-- Elemento del carrito con imagen y alineado a la derecha -->
+    <li class="cart-item"><a href="carrito.php"><img src="imagenes/carrito.jfif" alt="Carrito" style="height:24px;"></a></li>
+</ul>
+
+
+<!-- Contenedor de las cards de productos -->
+<div class="card-container">
+    <!-- Card de Producto 1 -->
+    <div class="card">
+        <img src="imagenes/alfombra.jpg" alt="Producto 1">
+        <div class="card-text">
+            <h4 class="card-title">Alfombra</h4>
+            <p class="card-price">$269.99</p>
+            <p>Alfombra redonda irregular, antideslizante, alfombra de sala de estar, suave para
+                 interiores y exteriores, alfombra abstracta moderna (color: A, tamaño: 55)</p>
+            <!-- Botones de acción para la tarjeta -->
+            <div class="card-actions">
+                <button onclick="openModal('modal1')">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Card de Producto 2 -->
+    <div class="card">
+        <img src="imagenes/cabecero.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Cabecero Flotante</h4>
+            <p class="card-price">$800.99</p>
+            <p>Tbfit - Cabecero flotante tapizado para cama de dormitorio tamaño Queen, 
+                cabecero insonorizado adhesivo, para montar en la pared, paquete de 9 paneles.</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 3 -->
+    <div class="card">
+        <img src="imagenes/cortinas.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Cortinas</h4>
+            <p class="card-price">$479.99</p>
+            <p>HOMEIDEAS - Cortinas de terciopelo rosa polvoriento, 2
+                paneles para niñas y damas, cortinas de terciopelo rosa pesado para sala de estar.</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 4 -->
+    <div class="card">
+        <img src="imagenes/reloj.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Reloj</h4>
+            <p class="card-price">$99.99</p>
+            <p>Deryang Reloj de Pared, Reloj de Pared Minimalista Interior Decorativo de
+                 Estilo Simple de Madera para el hogar para la Oficina</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 5 -->
+    <div class="card">
+        <img src="imagenes/paneles.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Paneles Decorativos</h4>
+            <p class="card-price">$289.99</p>
+            <p>Paneles Decorativos 3D,30 Piezas,Decorativos Para Paredes,Paneles Decorativos 
+                3D Impermeables para Hogar,Oficina,Sala De Estar,30 * 30CM(D-Diamante Negro)</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 6 -->
+    <div class="card">
+        <img src="imagenes/lchan.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Lamparas Colgantes</h4>
+            <p class="card-price">$180.89</p>
+            <p>LHChan Lamparas Colgante de Techo Rustica 3 Unidades,Luz Colgante Pantalla Vintage,Modernas 
+                Lamparas de Techo para Salon Cocina Comedor E26,E27(Sin Bombilla)</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 7 -->
+    <div class="card">
+        <img src="imagenes/led.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Lampara Led</h4>
+            <p class="card-price">$88.99</p>
+            <p>Bihuolamp - Lámpara LED de pared moderna con visualización de vidrio de burbujas de vidrio, 4000 K, color blanco natural, para recámara, sala de estar, pared, espejo, lámpara frontal, 
+                ajuste de iluminación de maquillaje (tamaño 16 cm)</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 8 -->
+    <div class="card">
+        <img src="imagenes/lampara.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Lampara de Techo</h4>
+            <p class="card-price">$60.99</p>
+            <p>Tecnolite - Lámpara de Techo para Interior de Casas Beid II, Función Dirigible hacia 
+                Diferentes Ángulos, Spot LED de Sobreponer. Potencia 7 Watts, Foco Incluído.</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 9 -->
+    <div class="card">
+        <img src="imagenes/jarron.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Juego de Jarron</h4>
+            <p class="card-price">$300.99</p>
+            <p>CEMABT Juego de jarrón de cerámica Blanca, 3 jarrones pequeños para decoración, decoración 
+                Moderna de casa de Campo, jarrón Decorativo para Hierba de Pampa</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Producto 10 -->
+    <div class="card">
+        <img src="imagenes/temson.jpg" alt="Producto 2">
+        <div class="card-text">
+            <h4 class="card-title">Teamson</h4>
+            <p class="card-price">$509.99</p>
+            <p>Teamson Design VN-L00013 Versanora - Arquer 170.00 cm 
+                Luz de lectura moderna para lámpara de pie con arco para, dormitorio, sala, Negro.</p>
+            <div class="card-actions">
+                <button onclick="location.href='detalles.php?id=1';">Detalles</button>
+                <button onclick="location.href='comprar.php?id=1';">Comprar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="imagenes/alfombra.jpg" alt="Producto 1" style="max-width:300px;">
+                </div>
+                <div class="modal-text-container">
+                    <h2>Detalles del Producto</h2>
+                    <h3>Acerca de este artículo</h3>
+                    <ul>
+                        <li><strong>Material:</strong> Material: hecho de poliéster de alta calidad, duradero, delicado y suave sin desprendimiento.
+                            Diseño único: diseño circular irregular con patrones abstractos modernos, simple y atmosférico, adecuado para cualquier estilo de decoración. Encuadernación de bordes, 
+                            el proceso de costura de borde apretado es fuerte y duradero.</li>
+                        <!-- Más elementos de la lista -->
+                    </ul>
+                    <button onclick="addToCart()">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+   
+
+    <!-- Más cards de productos... -->
+</div>
+
+
+
+
+</body>
+<script>
+    // Función para abrir la ventana modal
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "block";
+}
+
+// Función para cerrar la ventana modal
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+}
+
+// Cierra la modal si el usuario hace clic fuera de ella
+window.onclick = function(event) {
+    var modals = document.getElementsByClassName('modal');
+    for (var i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
+
+function addToCart() {
+    alert('Se agregó con éxito');
+    
+}
+</script>
+</html>
