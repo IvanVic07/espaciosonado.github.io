@@ -1,3 +1,5 @@
+
+
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
@@ -23,9 +25,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login_error = 'Email o contraseña incorrecta.';
 }
 ?>
-<!-- HTML para el formulario de inicio de sesión -->
-<form method="post">
-    Email: <input type="email" name="email" required><br>
-    Contraseña: <input type="password" name="password" required><br>
-    <input type="submit" value="Iniciar sesión">
-</form>

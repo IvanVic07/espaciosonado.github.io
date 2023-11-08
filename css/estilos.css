@@ -187,3 +187,46 @@
 .modal-text-container button:hover {
     background-color: #45a049;
 }
+
+/* Estilo minimalista para la ventana de consentimiento de cookies */
+.cookie-consent-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .cookie-consent-content p {
+    margin: 0;
+    font-size: 0.9em;
+  }
+  
+  .cookie-consent-content a {
+    color: #ffd700;
+    text-decoration: none;
+  }
+  
+  .cookie-consent-btn {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    cursor: pointer;
+    font-size: 0.9em;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .cookie-consent-btn:hover {
+    background-color: white;
+    color: black;
+  }
+  

@@ -16,6 +16,15 @@
 </script>
 <body>
 
+    <div id="cookieConsentContainer" class="cookie-consent-container">
+        <div class="cookie-consent-content">
+          <p>Este sitio utiliza cookies para mejorar la experiencia de usuario. <a href="politica_cookies.html">Leer más</a>.</p>
+          <button id="acceptCookies" class="cookie-consent-btn">Aceptar</button>
+          <button id="rejectCookies" class="cookie-consent-btn">Rechazar</button>
+        </div>
+      </div>
+
+
 <!-- Barra de menú -->
 <ul class="menu-bar">
     <li><a href="index.html">Inicio</a></li>
@@ -234,5 +243,21 @@ function addToCart() {
     alert('Se agregó con éxito');
     
 }
+
+
+window.onload = function() {
+  // Mostrar la ventana de consentimiento de cookies
+  document.getElementById("cookieConsentContainer").style.display = "block";
+
+  // Al hacer clic en el botón de aceptar, simplemente ocultar la ventana
+  document.getElementById("acceptCookies").onclick = function() {
+    document.getElementById("cookieConsentContainer").style.display = "none";
+  };
+
+  // Al hacer clic en el botón de rechazar, también ocultar la ventana
+  document.getElementById("rejectCookies").onclick = function() {
+    document.getElementById("cookieConsentContainer").style.display = "none";
+  };
+};
 </script>
 </html>
