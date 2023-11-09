@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mis Compras - Espacio Soñado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between; /* Para alinear elementos al lado derecho del menú */
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        header li {
+            margin-right: 20px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header form {
+            display: flex; /* Para alinear el formulario y el botón en línea */
+            align-items: center; /* Para centrar verticalmente los elementos del formulario */
+        }
+
+        header input[type="text"] {
+            margin-right: 10px; /* Espacio entre el campo de búsqueda y el botón */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .compra {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .compra h2 {
+            color: #333;
+            margin-left: 130px;
+        }
+
+        .compra img {
+            max-width: 130px;
+            margin: 0 10px 0 0;
+            float: left;
+        }
+
+        .estado {
+            font-weight: bold;
+        }
+
+        .estado-entregado {
+            color: green;
+        }
+
+        .fecha {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+        </ul>
+        <form action="buscar.php" method="GET">
+            <input type="text" name="q" placeholder="Buscar productos...">
+            <input type="submit" value="Buscar">
+        </form>
+    </header>
+
+    <h1>Mis Compras</h1>
+
+    <div class="compra">
+        <img src="imagenes/led.jpg" alt="Lámpara LED">
+        <h2>Lampara Led</h2>
+        <p>Estado: <span class="estado estado-entregado">Entregado</span></p>
+        <p class="fecha">Fecha de compra: 2023-11-08</p>
+    </div>
+
+    <div class="compra">
+        <img src="imagenes/alfombra.jpg" alt="Alfombra">
+        <h2>Alfombra</h2>
+        <p>Estado: <span class="estado">En proceso</span></p>
+        <p class="fecha">Fecha de compra: 2023-11-05</p>
+    </div>
+
+    <div class="compra">
+        <img src="imagenes/cabecero.jpg" alt="Cabecero Flotante">
+        <h2>Cabecero Flotante</h2>
+        <p>Estado: <span class="estado">En camino</span></p>
+        <p class="fecha">Fecha de compra: 2023-11-02</p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
