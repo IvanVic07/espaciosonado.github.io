@@ -247,10 +247,11 @@
 .login-container {
     background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 340px;
     text-align: center;
+    margin: 50px auto; /* Centrar el contenedor en la página */
 }
 
 h2 {
@@ -356,6 +357,58 @@ input[type="submit"]:hover {
 
 .login-form-container a:hover {
     text-decoration: underline;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Asegurar que los hijos (input y botón) se extiendan completamente */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px); /* Restar el padding para mantener el ancho del contenedor */
+    padding: 10px;
+    margin-bottom: 15px; /* Dar un poco más de espacio entre los inputs */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    width: calc(100% - 20px); /* Restar el padding para mantener el ancho del contenedor */
+    background: #2B2B2B; /* Color del botón similar al de la barra de menú */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #1f1f1f; /* Un tono más oscuro que el color de fondo del botón */
+}
+
+.registro-link {
+    display: block;
+    margin-top: 20px;
+    color: #007BFF; /* Color que combine con la barra de menú o el tema de la página */
+    text-decoration: none;
+}
+
+.registro-link:hover {
+    color: #0056b3; /* Un tono más oscuro para el hover */
+}
+
+/* Agregando media queries si necesitas ajustar para móviles */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%; /* Más estrecho en pantallas pequeñas */
+        margin-top: 20px; /* Menos espacio en la parte superior en pantallas pequeñas */
+        padding: 20px; /* Menos padding en pantallas pequeñas */
+    }
 }
 
 /* Ajustes de responsividad */
