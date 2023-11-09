@@ -1,7 +1,8 @@
 /* Estilos básicos para la barra de menú */
 .menu-bar {
     list-style: none;
-    background-color: #333;
+    background-color: #2B2B2B;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -113,7 +114,7 @@
     margin: 15% auto; /* 15% desde arriba y centrado horizontalmente */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Podrías querer un ancho más pequeño para móviles */
+    width: 90%; /* Podrías querer un ancho más pequeño para móviles */
 }
 
 /* El botón cerrar (x) */
@@ -364,3 +365,11 @@ input[type="submit"]:hover {
         padding: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Ajuste del ancho para dispositivos móviles */
+    }
+    /* Agrega aquí más estilos específicos para dispositivos móviles si es necesario */
+}
+
