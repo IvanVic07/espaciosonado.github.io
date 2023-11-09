@@ -286,3 +286,54 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: #0056b3;
 }
+
+/* estilos.css */
+
+/* Estilos generales para formularios */
+form {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para etiquetas de formularios */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos para entradas de formularios */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos para botones */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5c6bc0;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3f51b5;
+}
+
+/* Estilo para el enlace de cambio entre Iniciar sesión y Registrarse */
+form div a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
