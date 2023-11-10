@@ -187,3 +187,27 @@
 .modal-text-container button:hover {
     background-color: #45a049;
 }
+
+/*footer*/
+.footer {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.footer a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+.footer a:hover {
+    color: #017cff;
+}
+.footer .social-icons {
+    font-size: 24px; /* Tamaño de los iconos */
+}
