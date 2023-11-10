@@ -67,29 +67,7 @@
         .card-container {
             text-align: center;
         }
-        .card-actions button {
-    padding: 10px 15px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.card-actions button:hover {
-    background-color: #555;
-    color: white;
-}
-
-/* Estilos específicos para los botones de Detalles y Comprar */
-.card-actions button:first-child {
-    background-color: #f8f8f8;
-}
-
-.card-actions button:last-child {
-    background-color: #4CAF50;
-    color: white;
-}
+        
 
 /* Estilo para la ventana modal */
 .modal {
@@ -130,21 +108,7 @@
 }
 
 /* Estilo para el botón Agregar al carrito dentro de la ventana modal */
-.modal-content button {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: white; /* Texto en blanco */
-    padding: 12px 24px; /* Espaciado interno */
-    margin: 10px 0; /* Margen exterior */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cursor en forma de mano al pasar por encima */
-    font-size: 16px; /* Tamaño de la fuente */
-    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
-}
 
-.modal-content button:hover {
-    background-color: #45a049; /* Color de fondo un poco más oscuro al pasar el cursor por encima */
-}
 
 .modal-body {
     display: flex;
@@ -173,20 +137,7 @@
 }
 
 /* Estilos para el botón */
-.modal-text-container button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
 
-.modal-text-container button:hover {
-    background-color: #45a049;
-}
 
 /*footer*/
 .footer {
@@ -210,4 +161,14 @@
 }
 .footer .social-icons {
     font-size: 24px; /* Tamaño de los iconos */
+}
+
+ /* Establece un alto máximo para las imágenes del carrusel */
+ .carousel-item {
+    height: 400px; /* Ajusta este valor según tus necesidades */
+}
+.carousel-item img {
+    object-fit: cover; /* Esto asegura que la imagen cubra el área sin estirarse */
+    width: 100%;
+    height: 100%;
 }
