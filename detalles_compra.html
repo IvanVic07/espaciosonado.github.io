@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Detalles de la Compra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .detalles-compra {
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .detalles-compra img {
+            max-width: 100%;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .info {
+            margin-bottom: 15px;
+        }
+
+        .volver-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .volver-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="detalles-compra" id="detallesCompra">
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+
+            const detallesCompra = document.getElementById('detallesCompra');
+
+            switch (productId) {
+                case '1':
+                    detallesCompra.innerHTML = `
+                        <img src="imagenes/led.jpg" alt="Lámpara LED">
+                        <div class="info">
+                            <h2>Lampara Led</h2>
+                            <p>Estado: Entregado</p>
+                            <p>Fecha de compra: 2023-11-08</p>
+                            <p>Precio: $</p>
+                            <p>Método de pago: Tarjeta de crédito</p>
+                        </div>
+                        <button class="volver-btn" onclick="window.location.href='ordenes.html'">Volver</button>
+                    `;
+                    break;
+                case '2':
+                    detallesCompra.innerHTML = `
+                        <img src="imagenes/alfombra.jpg" alt="Alfombra">
+                        <div class="info">
+                            <h2>Alfombra</h2>
+                            <p>Estado: En proceso</p>
+                            <p>Fecha de compra: 2023-11-05</p>
+                            <p>Precio: $</p>
+                            <p>Método de pago: PayPal</p>
+                        </div>
+                        <button class="volver-btn" onclick="window.location.href='ordenes.html'">Volver</button>
+                    `;
+                    break;
+                case '3':
+                    detallesCompra.innerHTML = `
+                        <img src="imagenes/cabecero.jpg" alt="Cabecero Flotante">
+                        <div class="info">
+                            <h2>Cabecero Flotante</h2>
+                            <p>Estado: En camino</p>
+                            <p>Fecha de compra: 2023-11-02</p>
+                            <p>Precio: $</p>
+                            <p>Método de pago: Transferencia bancaria</p>
+                        </div>
+                        <button class="volver-btn" onclick="window.location.href='ordenes.html'">Volver</button>
+                    `;
+                    break;
+                default:
+                    detallesCompra.innerHTML = '<p>Producto no encontrado</p>';
+            }
+        </script>
+    </div>
+</body>
+
+</html>
+
+

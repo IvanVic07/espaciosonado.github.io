@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Mis Compras - Espacio Soñado</title>
     <style>
@@ -28,6 +29,7 @@
         header a {
             color: white;
             text-decoration: none;
+            font-family: 'Helvetica', sans-serif;
         }
 
         header form {
@@ -36,7 +38,24 @@
         }
 
         header input[type="text"] {
-            margin-right: 10px; 
+            margin-right: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        header input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: 1px solid #333;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        header input[type="submit"]:hover {
+            background-color: #555;
+            border: 1px solid #555;
         }
 
         h1 {
@@ -48,6 +67,7 @@
             margin: 10px;
             padding: 10px;
             background-color: #f9f9f9;
+            position: relative;
         }
 
         .compra h2 {
@@ -72,9 +92,30 @@
         .fecha {
             color: #777;
         }
+
+        .ver-compra-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            background-color: transparent;
+            color: green;
+            border: 1px solid green;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .ver-compra-btn:hover {
+            background-color: green;
+            color: white;
+        }
     </style>
 </head>
+
 <body>
+    
     <header>
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -92,6 +133,7 @@
         <h2>Lampara Led</h2>
         <p>Estado: <span class="estado estado-entregado">Entregado</span></p>
         <p class="fecha">Fecha de compra: 2023-11-08</p>
+        <button class="ver-compra-btn" onclick="window.location.href='detalles_compra.html?id=1'">Ver compra</button>
     </div>
 
     <div class="compra">
@@ -99,6 +141,7 @@
         <h2>Alfombra</h2>
         <p>Estado: <span class="estado">En proceso</span></p>
         <p class="fecha">Fecha de compra: 2023-11-05</p>
+        <button class="ver-compra-btn" onclick="window.location.href='detalles_compra.html?id=2'">Ver compra</button>
     </div>
 
     <div class="compra">
@@ -106,9 +149,17 @@
         <h2>Cabecero Flotante</h2>
         <p>Estado: <span class="estado">En camino</span></p>
         <p class="fecha">Fecha de compra: 2023-11-02</p>
+        <button class="ver-compra-btn" onclick="window.location.href='detalles_compra.html?id=3'">Ver compra</button>
     </div>
 </body>
+
 </html>
+
+
+
+
+
+
 
 
 
