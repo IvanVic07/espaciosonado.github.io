@@ -93,6 +93,7 @@
             <!-- Botones de acción para la tarjeta -->
             <div class="card-actions">
                 <button type="button" class="btn btn-outline-primary" onclick="openModal('modal1')">Detalles</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="openReviewsModal('modalReviews1')">Reseñas</button>
                 <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=1';">Comprar</button>
             </div>
         </div>
@@ -113,6 +114,7 @@
             <!-- Botones de acción para la tarjeta -->
             <div class="card-actions">
                 <button type="button" class="btn btn-outline-primary" onclick="openModal('modal1')">Detalles</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="openReviewsModal('modalReviews1')">Reseñas</button>
                 <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=1';">Comprar</button>
             </div>
         </div>
@@ -133,6 +135,7 @@
             <!-- Botones de acción para la tarjeta -->
             <div class="card-actions">
                 <button type="button" class="btn btn-outline-primary" onclick="openModal('modal1')">Detalles</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="openReviewsModal('modalReviews1')">Reseñas</button>
                 <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=1';">Comprar</button>
             </div>
         </div>
@@ -153,6 +156,7 @@
             <!-- Botones de acción para la tarjeta -->
             <div class="card-actions">
                 <button type="button" class="btn btn-outline-primary" onclick="openModal('modal1')">Detalles</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="openReviewsModal('modalReviews1')">Reseñas</button>
                 <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=1';">Comprar</button>
             </div>
         </div>
@@ -235,5 +239,55 @@ function addToCart() {
     alert('Se agregó con éxito');
     
 }
+</script>
+
+<div id="modalReviews1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalReviews1')">&times;</span>
+        <div class="modal-body">
+            <h2>Reseñas del Producto</h2>
+            <ul id="productReviews">
+                <!-- Aquí se mostrarán las reseñas del producto -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Función para abrir el modal de reseñas
+    function openReviewsModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "block";
+
+        // Aquí deberías cargar las reseñas del producto específico
+        // Este es un ejemplo estático, podrías cargar las reseñas desde una fuente de datos real
+        var reviewsData = {
+            // Aquí deberías tener un array de reseñas correspondiente a cada producto
+            "1": [
+                "¡Excelente producto, muy cómodo y de buena calidad!",
+                "Me encantó, se ve exactamente como en la imagen."
+            ],
+            // Agrega más reseñas para otros productos si es necesario
+        };
+
+        var reviewsList = document.getElementById('productReviews');
+        reviewsList.innerHTML = ''; // Borra reseñas previas si las hay
+
+        var productId = modalId.replace('modalReviews', ''); // Extrae el ID del producto del ID del modal
+        var productReviews = reviewsData[productId];
+
+        if (productReviews) {
+            productReviews.forEach(function(review) {
+                var li = document.createElement('li');
+                li.textContent = review;
+                reviewsList.appendChild(li);
+            });
+        } else {
+            var noReviews = document.createElement('li');
+            noReviews.textContent = "No hay reseñas disponibles para este producto.";
+            reviewsList.appendChild(noReviews);
+        }
+    }
+    // Resto del código para cerrar modales...
 </script>
 </html>
