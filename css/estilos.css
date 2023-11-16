@@ -264,4 +264,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #2980b9;
 }
+
+.cookie-consent-container {
+    background-color: #f8f9fa; /* Cambia el color de fondo si lo necesitas */
+    color: #333; /* Cambia el color del texto si lo deseas */
+}
   
