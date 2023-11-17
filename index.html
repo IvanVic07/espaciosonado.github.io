@@ -105,14 +105,35 @@
 
 <div class="col-md-4 col-sm-6">
     <div class="card">
-        <img src="imagenes/alfombra.jpg" class="card-img-top" alt="Alfombra">
+        <img src="imagenes/cabecero.jpg" class="card-img-top" alt="Cabecero">
         <div class="card-body">
-            <h5 class="card-title">Alfombra</h5>
+            <h5 class="card-title">Cabecero Flotante</h5>
             <p class="card-text">
-                <strong>$269.99</strong>
+                <strong>$800.99</strong>
                 <br>
-                Alfombra redonda irregular, antideslizante, alfombra de sala de estar, suave para
-                interiores y exteriores, alfombra abstracta moderna (color: A, tamaño: 55)
+                Cabecero flotante tapizado para cama de dormitorio tamaño Queen, 
+                cabecero insonorizado adhesivo, para montar en la pared, paquete de 9 paneles.
+            </p>
+            <!-- Botones de acción para la tarjeta -->
+            <div class="card-actions">
+                <button type="button" class="btn btn-outline-primary" onclick="openModal('modal2')">Detalles</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="openReviewsModal('modalReviews2')">Reseñas</button>
+                <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=2';">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-6">
+    <div class="card">
+        <img src="imagenes/cortinas.jpg" class="card-img-top" alt="Cortinas">
+        <div class="card-body">
+            <h5 class="card-title">Cortinas</h5>
+            <p class="card-text">
+                <strong>$479.99</strong>
+                <br>
+                HOMEIDEAS - Cortinas de terciopelo rosa polvoriento, 2
+                paneles para niñas y damas, cortinas de terciopelo rosa pesado para sala de estar.
             </p>
             <!-- Botones de acción para la tarjeta -->
             <div class="card-actions">
@@ -126,35 +147,14 @@
 
 <div class="col-md-4 col-sm-6">
     <div class="card">
-        <img src="imagenes/alfombra.jpg" class="card-img-top" alt="Alfombra">
+        <img src="imagenes/reloj.jpg" class="card-img-top" alt="Reloj">
         <div class="card-body">
-            <h5 class="card-title">Alfombra</h5>
+            <h5 class="card-title">Reloj</h5>
             <p class="card-text">
-                <strong>$269.99</strong>
+                <strong>$99.99</strong>
                 <br>
-                Alfombra redonda irregular, antideslizante, alfombra de sala de estar, suave para
-                interiores y exteriores, alfombra abstracta moderna (color: A, tamaño: 55)
-            </p>
-            <!-- Botones de acción para la tarjeta -->
-            <div class="card-actions">
-                <button type="button" class="btn btn-outline-primary" onclick="openModal('modal1')">Detalles</button>
-                <button type="button" class="btn btn-outline-secondary" onclick="openReviewsModal('modalReviews1')">Reseñas</button>
-                <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=1';">Comprar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="col-md-4 col-sm-6">
-    <div class="card">
-        <img src="imagenes/alfombra.jpg" class="card-img-top" alt="Alfombra">
-        <div class="card-body">
-            <h5 class="card-title">Alfombra</h5>
-            <p class="card-text">
-                <strong>$269.99</strong>
-                <br>
-                Alfombra redonda irregular, antideslizante, alfombra de sala de estar, suave para
-                interiores y exteriores, alfombra abstracta moderna (color: A, tamaño: 55)
+                Deryang Reloj de Pared, Reloj de Pared Minimalista Interior Decorativo de
+                 Estilo Simple de Madera para el hogar para la Oficina
             </p>
             <!-- Botones de acción para la tarjeta -->
             <div class="card-actions">
@@ -185,9 +185,36 @@
                     <h2>Detalles del Producto</h2>
                     <h3>Acerca de este artículo</h3>
                     <ul>
-                        <li><strong>Material:</strong> Material: hecho de poliéster de alta calidad, duradero, delicado y suave sin desprendimiento.
-                            Diseño único: diseño circular irregular con patrones abstractos modernos, simple y atmosférico, adecuado para cualquier estilo de decoración. Encuadernación de bordes, 
-                            el proceso de costura de borde apretado es fuerte y duradero.</li>
+                        <li><strong>Material:</strong>  Hecho de poliéster de alta calidad, duradero, delicado y suave sin desprendimiento. <br> </li>
+                        <li><strong>Diseño único:</strong> Diseño circular irregular con patrones abstractos modernos, simple y atmosférico, adecuado para cualquier estilo de decoración. Encuadernación de bordes, 
+                            el proceso de costura de borde apretado es fuerte y duradero. </li>
+                        <!-- Más elementos de la lista -->
+                    </ul>
+                    <button type="button" class="btn btn-outline-danger" onclick="addToCart()">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="imagenes/cabecero.jpg" alt="Cabecero" style="max-width:300px;">
+                </div>
+                <div class="modal-text-container">
+                    <h2>Detalles del Producto</h2>
+                    <h3>Acerca de este artículo</h3>
+                    <ul>
+                        <li><strong>Material:</strong> Material: Confeccionado en lino de primera calidad, 
+                            este cabecero flotante destaca por su durabilidad, su textura delicada y su suavidad incomparable, sin comprometer la resistencia. <br>
+
+                            <strong> Diseño único:</strong>
+
+                            Diseño único: El cabecero presenta un diseño moderno. 
+                            Su simplicidad y estilo lo convierten en la elección perfecta para complementar cualquier estilo de decoración. 
+                            La meticulosa encuadernación de bordes y el proceso de costura de borde garantizan una fortaleza y durabilidad excepcionales.</li>
                         <!-- Más elementos de la lista -->
                     </ul>
                     <button type="button" class="btn btn-outline-danger" onclick="addToCart()">Agregar al carrito</button>
