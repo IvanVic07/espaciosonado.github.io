@@ -30,15 +30,15 @@
 
 
         /* Estilos básicos para las cards */
+        
+        
         .card {
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-            width: 300px; /* Ancho fijo para todas las tarjetas */
-            border-radius: 5px;
             margin: 10px;
-            display: inline-block; /* Asegura que las tarjetas se muestren en línea */
-            vertical-align: top;
+            padding: 20px;
+            text-align: center;
+            width: 100%; 
         }
+        
 
         .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -174,14 +174,16 @@
 }
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 10px;
     justify-content: center;
     align-items: center;
     padding: 20px;
     width: 80%;
+    min-height: 600px; /* Establece un alto mínimo para las tarjetas */
     margin: 0 auto;
 }
+
 
 .card {
     border: 1px solid #ddd;
