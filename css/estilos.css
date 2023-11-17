@@ -272,3 +272,15 @@ input[type="submit"]:hover {
     color: #333; /* Cambia el color del texto si lo deseas */
 }
   
+.main-title {
+    text-align: center; /* Centra el título */
+    font-size: 2.5em; /* Ajusta el tamaño de la fuente */
+    margin-top: 1em; /* Agrega espacio en la parte superior */
+    margin-bottom: 1em; /* Agrega espacio en la parte inferior */
+    font-family: 'Arial', sans-serif; /* Cambia la fuente si es necesario */
+    color: #333; /* Cambia al color que prefieras */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra de texto ligera para mejorar la legibilidad */
+    max-width: 80%; /* Controla el ancho máximo del título */
+    margin-left: auto; /* Esto y la siguiente línea centran el título si tiene un ancho máximo */
+    margin-right: auto;
+}
