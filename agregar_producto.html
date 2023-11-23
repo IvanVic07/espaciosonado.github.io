@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h1>Información del Producto</h1>
+        <form>
+            <div class="mb-3">
+                <label for="nombreProducto" class="form-label">Producto</label>
+                <input type="text" class="form-control" id="nombreProducto" placeholder="Ingresa el nombre del producto">
+            </div>
+            <div class="mb-3">
+                <label for="descripcionProducto" class="form-label">Descripción del Producto</label>
+                <input type="text" class="form-control" id="descripcionProducto" placeholder="Ingresa la descripción del producto">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="agregarFila()">Agregar</button>
+        </form>
+    </div>
+
+    <div class="container mt-3">
+        <h2>Tabla de Productos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Editar</th>
+                    <th>ID</th>
+                    <th>Nombre del Producto</th>
+                    <th>Descripción del Producto</th>
+                    <th>Borrar</th>
+                </tr>
+            </thead>
+            <tbody id="tablaProductos">
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarModalLabel">Editar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="idProductoEditar" class="form-label">ID del Producto</label>
+                            <input type="text" class="form-control" id="idProductoEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombreProductoEditar" class="form-label">Nombre del Producto</label>
+                            <input type="text" class="form-control" id="nombreProductoEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcionProductoEditar" class="form-label">Descripción del Producto</label>
+                            <input type="text" class="form-control" id="descripcionProductoEditar">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarEdicion()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+   var productos = []; 
+
+   function agregarFila() {
+            
+            var nombreProducto = document.getElementById("nombreProducto").value;
+            var descripcionProducto = document.getElementById("descripcionProducto").value;
+
+            
+            if (nombreProducto === "" || descripcionProducto === "") {
+                alert("Por favor, completa todos los campos para agregar el producto.");
+                return;
+            }
+
+            
+            var productoExistente = productos.find(function(producto) {
+                return producto.nombre === nombreProducto;
+            });
+
+            if (productoExistente) {
+                alert("El producto ya existe.");
+                return;
+            }
+
+            
+            var proximoID = encontrarProximoID();
+
+            
+            var producto = {
+                id: proximoID,
+                nombre: nombreProducto,
+                descripcion: descripcionProducto
+            };
+
+            
+            productos.push(producto);
+
+            
+            document.getElementById("nombreProducto").value = "";
+            document.getElementById("descripcionProducto").value = "";
+
+            
+            actualizarTabla();
+        }
+
+        function encontrarProximoID() {
+            
+            var idsExistente = new Set(productos.map(function(producto) {
+                return producto.id;
+            }));
+
+            
+            for (var i = 1; i <= idsExistente.size + 1; i++) {
+                if (!idsExistente.has(i)) {
+                    return i;
+                }
+            }
+        }
+
+        function editarFila(id) {
+            
+            var producto = productos.find(function(p) {
+                return p.id === id;
+            });
+
+            if (producto) {
+                
+                document.getElementById("nombreProductoEditar").value = producto.nombre;
+                document.getElementById("descripcionProductoEditar").value = producto.descripcion;
+
+                
+                document.getElementById("editarModal").setAttribute("data-producto-id", producto.id);
+
+                
+                var editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
+                editarModal.show();
+            }
+        }
+
+        function guardarEdicion() {
+            
+            var productoId = parseInt(document.getElementById("editarModal").getAttribute("data-producto-id"));
+
+            
+            var producto = productos.find(function(p) {
+                return p.id === productoId;
+            });
+
+            if (producto) {
+                
+                producto.nombre = document.getElementById("nombreProductoEditar").value;
+                producto.descripcion = document.getElementById("descripcionProductoEditar").value;
+
+                
+                var editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
+                editarModal.hide();
+
+                
+                actualizarTabla();
+            }
+        }
+
+        function eliminarFila(id) {
+            
+            var index = productos.findIndex(function(p) {
+                return p.id === id;
+            });
+
+            if (index !== -1) {
+                
+                productos.splice(index, 1);
+
+            
+                actualizarTabla();
+            }
+        }
+        
+        function actualizarTabla() {
+            
+            var tabla = document.getElementById("tablaProductos");
+
+            
+            tabla.innerHTML = "";
+
+            
+            productos.forEach(function(producto) {
+                var fila = tabla.insertRow();
+
+                
+                var cellEditar = fila.insertCell(0);
+                var cellId = fila.insertCell(1);
+                var cellNombreProducto = fila.insertCell(2);
+                var cellDescripcionProducto = fila.insertCell(3);
+                var cellBorrar = fila.insertCell(4);
+
+                
+                cellEditar.innerHTML = '<button class="btn btn-warning" onclick="editarFila(' + producto.id + ')">Editar</button>';
+                cellId.innerHTML = producto.id;
+                cellNombreProducto.innerHTML = producto.nombre;
+                cellDescripcionProducto.innerHTML = producto.descripcion;
+                cellBorrar.innerHTML = '<button class="btn btn-danger" onclick="eliminarFila(' + producto.id + ')">Borrar</button>';
+            });
+        }
+    </script>
+</body>
+</html>

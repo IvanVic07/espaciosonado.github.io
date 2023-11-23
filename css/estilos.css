@@ -284,3 +284,50 @@ input[type="submit"]:hover {
     margin-left: auto; /* Esto y la siguiente línea centran el título si tiene un ancho máximo */
     margin-right: auto;
 }
+
+
+body {
+    /* Agrega margen superior al cuerpo para evitar que el botón se superponga al contenido */
+    margin-top: 40px;
+}
+
+#botonGestion {
+    /* Estilo del botón */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    /* Fija la posición del botón */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Estilos para la información del producto */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* Estilos para la tabla de productos */
+.table {
+    margin-top: 20px;
+}
+
+/* Estilos para el modal de edición */
+#editarModal {
+    color: #333;
+}
+
+/* Ajustes de estilo para los botones en la tabla */
+.btn-warning,
+.btn-danger {
+    margin-right: 5px;
+}
