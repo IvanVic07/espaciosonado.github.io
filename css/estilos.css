@@ -331,3 +331,7 @@ form {
 .btn-danger {
     margin-right: 5px;
 }
+
+.navbar-brand img {
+    mix-blend-mode: multiply;
+  }
