@@ -453,13 +453,12 @@ function addToCart() {
         // Aquí deberías cargar las reseñas del producto específico
         // Este es un ejemplo estático, podrías cargar las reseñas desde una fuente de datos real
         var reviewsData = {
-            // Aquí deberías tener un array de reseñas correspondiente a cada producto
-            "1": [
-                "¡Excelente producto, muy cómodo y de buena calidad!",
-                "Me encantó, se ve exactamente como en la imagen."
-            ],
-            // Agrega más reseñas para otros productos si es necesario
-        };
+    "1": [
+        { name: "Rogelio Mendoza", rating: 5, review: "¡Excelente producto, muy cómodo y de buena calidad!" },
+        { name: "Maria Alvarez", rating: 4, review: "Me encantó, se ve exactamente como en la imagen." }
+    ],
+    // Agrega más reseñas para otros productos si es necesario
+};
 
         var reviewsList = document.getElementById('productReviews');
         reviewsList.innerHTML = ''; // Borra reseñas previas si las hay
@@ -468,9 +467,9 @@ function addToCart() {
         var productReviews = reviewsData[productId];
 
         if (productReviews) {
-            productReviews.forEach(function(review) {
+            productReviews.forEach(function(reviewData) {
                 var li = document.createElement('li');
-                li.textContent = review;
+                li.textContent = reviewData.name + " - Calificación: " + reviewData.rating + "/5 - " + reviewData.review;
                 reviewsList.appendChild(li);
             });
         } else {
@@ -489,7 +488,6 @@ function addToCart() {
             $('#cookieModal').modal('hide');
         }
     });
-    
 </script>
 
 </html>

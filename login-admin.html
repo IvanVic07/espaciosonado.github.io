@@ -8,7 +8,7 @@
 <body>
     <div class="login-container">
         <h2>Iniciar sesión como administrador</h2>
-        <form action="tu_script_de_autenticacion.php" method="post">
+        <form onsubmit="redirectToAdminLobby(); return false;">
             <label for="usuario">Usuario:</label>
             <input type="text" id="usuario" name="usuario" required>
 
@@ -18,6 +18,12 @@
             <input type="submit" value="Iniciar sesión">
         </form>
     </div>
+
+    <script>
+        function redirectToAdminLobby() {
+            // Redirige a la página del lobby del administrador
+            window.location.href = "lobby_admin.html";
+        }
+    </script>
 </body>
 </html>
-

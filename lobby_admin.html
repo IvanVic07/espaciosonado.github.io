@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lobby del Administrador</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script>
+        function redirectToAgregarProductos() {
+            // Redirige a la página de agregar productos
+            window.location.href = "agregar_producto.html";
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .lobby-container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            background-color: #555;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sidebar-button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="lobby-container">
+        <div class="sidebar">
+            <button class="sidebar-button">Dashboard</button>
+            <button class="sidebar-button">Usuarios</button>
+            <button class="sidebar-button">Productos</button>
+            <button class="sidebar-button">Configuración</button>
+            <button onclick="redirectToAgregarProductos()">Agregar Productos</button>
+        </div>
+        <div class="main-content">
+            <h2>Bienvenido al Lobby del Administrador</h2>
+            <p>Este es un contenido de ejemplo para la página del administrador.</p>
+            <p>Puedes personalizar esta sección con la información y funcionalidades que necesites.</p>
+            <p>La barra lateral contiene botones que podrían llevar a secciones específicas de la aplicación.</p>
+        </div>
+    </div>
+</body>
+</html>
