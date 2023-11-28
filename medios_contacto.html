@@ -151,6 +151,13 @@
       // Mostrar mensaje de éxito
       alert('El mensaje ha sido enviado correctamente. Atenderemos tus dudas sin mayor dilación.');
 
+      // Restablecer los valores de los campos
+      document.getElementById('help-category').value = '';
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('details').value = '';
+
       // Retorna false para prevenir el envío del formulario por la acción predeterminada
       return false;
     }
@@ -158,4 +165,5 @@
 </body>
 
 </html>
+
 
