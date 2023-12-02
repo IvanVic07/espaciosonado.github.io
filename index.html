@@ -325,7 +325,7 @@
 
 
    
-
+<!-- Modal de descripcion de cada producto -->
     
 </div>
 
@@ -346,6 +346,33 @@
                         <li><strong>Descripción:</strong> Diseño circular irregular con patrones abstractos modernos, simple y atmosférico, adecuado para cualquier estilo de decoración. Encuadernación de bordes, 
                             el proceso de costura de borde apretado es fuerte y duradero. <br> </li>
                         <li><strong>Disponibles:</strong>  28 piezas <br> </li>
+                    </ul>
+                    <button type="button" class="btn btn-outline-danger" onclick="addToCart()">Agregar al carrito</button>
+                    <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=1';">Comprar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="imagenes/cabecero.jpg" alt="Producto 2" title="Imagen de cabecero" style="max-width:300px;">
+                </div>
+                <div class="modal-text-container">
+                    <h2>Cabecero</h2>
+                    <h3>Detalles de este artículo</h3>
+                    <ul>
+                        <li><strong>Material:</strong> Confeccionado en lino de primera calidad <br> </li>
+                        <li><strong>Color:</strong>  Beige con detalles de textura. <br> </li>
+                        <li><strong>Medidas:</strong>  142 X 65 cm. <br> </li>
+                        <li><strong>Descripción:</strong> El cabecero presenta un diseño moderno. 
+                            Su simplicidad y estilo lo convierten en la elección perfecta para complementar cualquier estilo de decoración. 
+                            La meticulosa encuadernación de bordes y el proceso de costura de borde garantizan una fortaleza y durabilidad excepcionales. <br> </li>
+                        <li><strong>Disponibles:</strong>  12 piezas <br> </li>
                     </ul>
                     <button type="button" class="btn btn-outline-danger" onclick="addToCart()">Agregar al carrito</button>
                     <button type="button" class="btn btn-outline-success" onclick="location.href='comprar.php?id=1';">Comprar</button>
