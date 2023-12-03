@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <!-- Añade aquí tu hoja de estilos -->
+    <style>
+        /* Estilos básicos para el contenedor y los productos */
+        #contenedor-carrito {
+            width: 100%;
+            margin: auto;
+        }
+        .item-carrito {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .item-carrito img {
+            max-width: 100px;
+            height: auto;
+        }
+        .item-carrito h2 {
+            font-size: 1.5em;
+        }
+        .item-carrito p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .item-carrito a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .item-carrito a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<!-- Título del Catálogo de Productos -->
+<div class="container mt-5">
+    <h1 class="text-center" >Productos añadidos al carrito </h1>
+</div>
+<!-- Contenedor donde se añadirán los elementos del carrito -->
+<div id="contenedor-carrito"></div>
+
+<script>
+// Estructura JSON con los elementos de tu carrito
+var datosCarrito = {
+    "carrito": [
+        {
+            "nombre": "Paneles",
+            "precio": "$1092.99",
+            "descripcion": "Paneles Decorativos 3D...",
+            "imagen": "imagenes/paneles.jpg",
+            "idModal": "modal3",
+            "idModalReviews": "modalReviews2",
+            "linkCompra": "comprar.php?id=2",
+            "estado": "En carrito",
+            "fechaAgregado": "2023-11-30"
+        },
+        {
+            "nombre": "Lampara Led",
+            "precio": "$189.99",
+            "descripcion": "Lámpara LED de pared moderna con visualización de vidrio...",
+            "imagen": "imagenes/led.jpg",
+            "idModal": "modal3",
+            "idModalReviews": "modalReviews2",
+            "linkCompra": "comprar.php?id=2",
+            "estado": "En carrito",
+            "fechaAgregado": "2023-11-30"
+        },
+        {
+            "nombre": "Jarron",
+            "precio": "$360.99",
+            "descripcion": "Juego de jarrón de cerámica Blanca, 3 jarrones pequeños para...",
+            "imagen": "imagenes/jarron.jpg",
+            "idModal": "modal3",
+            "idModalReviews": "modalReviews2",
+            "linkCompra": "comprar.php?id=2",
+            "estado": "En carrito",
+            "fechaAgregado": "2023-11-30"
+        },
+        {
+            "nombre": "Temson",
+            "precio": "$549.99",
+            "descripcion": "Teamson Design VN-L00013 Versanora...",
+            "imagen": "imagenes/temson.jpg",
+            "idModal": "modal3",
+            "idModalReviews": "modalReviews2",
+            "linkCompra": "comprar.php?id=2",
+            "estado": "En carrito",
+            "fechaAgregado": "2023-11-30"
+        }
+        // Puedes agregar más productos aquí
+    ]
+};
+
+// Función para renderizar los elementos del carrito
+function renderizarElementosCarrito(datosCarrito) {
+    var contenedor = document.getElementById('contenedor-carrito');
+
+    // Limpiar el contenedor
+    contenedor.innerHTML = '';
+
+    // Recorrer cada elemento del carrito y crear el HTML
+    datosCarrito.carrito.forEach(function(producto) {
+        var tarjeta = document.createElement('div');
+        tarjeta.className = 'item-carrito';
+        tarjeta.innerHTML = `
+            <h2>${producto.nombre}</h2>
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <p>${producto.descripcion}</p>
+            <p>Precio: ${producto.precio}</p>
+            <p>Estado: ${producto.estado}</p>
+            <p>Agregado el: ${producto.fechaAgregado}</p>
+            <a href="${producto.linkCompra}">Comprar ahora</a>
+        `;
+        contenedor.appendChild(tarjeta);
+    });
+}
+
+// Llamar a la función para renderizar los elementos
+renderizarElementosCarrito(datosCarrito);
+</script>
+
+</body>
+</html>
