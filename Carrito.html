@@ -1,133 +1,133 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Carrito de Compras</title>
-    <!-- Añade aquí tu hoja de estilos -->
+    <title>Carrito de Compras - Espacio Soñado</title>
     <style>
-        /* Estilos básicos para el contenedor y los productos */
-        #contenedor-carrito {
-            width: 100%;
-            margin: auto;
+        body {
+            font-family: Arial, sans-serif;
         }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        header li {
+            margin-right: 20px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Helvetica', sans-serif;
+        }
+
         .item-carrito {
-            border: 1px solid #ddd;
-            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            margin: 10px;
             padding: 10px;
             background-color: #f9f9f9;
+            position: relative;
+            overflow: auto;
         }
+
         .item-carrito img {
-            max-width: 100px;
-            height: auto;
+            max-width: 130px;
+            margin: 0 10px 0 0;
+            float: left;
         }
+        h1 {
+            text-align: center;
+        }
+
         .item-carrito h2 {
-            font-size: 1.5em;
+            color: #333;
+            margin-left: 130px;
         }
+
         .item-carrito p {
-            font-size: 1em;
-            margin: 5px 0;
+            margin-left: 130px;
+            color: #393333;
         }
-        .item-carrito a {
-            display: inline-block;
+
+        .comprar-ahora-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .item-carrito a:hover {
+
+        .comprar-ahora-btn:hover {
             background-color: #45a049;
         }
     </style>
 </head>
+
 <body>
-<!-- Título del Catálogo de Productos -->
-<div class="container mt-5">
-    <h1 class="text-center" >Productos añadidos al carrito </h1>
-</div>
-<!-- Contenedor donde se añadirán los elementos del carrito -->
-<div id="contenedor-carrito"></div>
+    <header>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo de productos</a></li>
+            <li><a href="lista_deseos.html">Lista de deseos</a></li>
+            <li><a href="ordenes.html">Mis compras</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Acerca de</a></li>
+        </ul>
+    </header>
 
-<script>
-// Estructura JSON con los elementos de tu carrito
-var datosCarrito = {
-    "carrito": [
-        {
-            "nombre": "Paneles",
-            "precio": "$1092.99",
-            "descripcion": "Paneles Decorativos 3D...",
-            "imagen": "imagenes/paneles.jpg",
-            "idModal": "modal3",
-            "idModalReviews": "modalReviews2",
-            "linkCompra": "comprar.php?id=2",
-            "estado": "En carrito",
-            "fechaAgregado": "2023-11-30"
-        },
-        {
-            "nombre": "Lampara Led",
-            "precio": "$189.99",
-            "descripcion": "Lámpara LED de pared moderna con visualización de vidrio...",
-            "imagen": "imagenes/led.jpg",
-            "idModal": "modal3",
-            "idModalReviews": "modalReviews2",
-            "linkCompra": "comprar.php?id=2",
-            "estado": "En carrito",
-            "fechaAgregado": "2023-11-30"
-        },
-        {
-            "nombre": "Jarron",
-            "precio": "$360.99",
-            "descripcion": "Juego de jarrón de cerámica Blanca, 3 jarrones pequeños para...",
-            "imagen": "imagenes/jarron.jpg",
-            "idModal": "modal3",
-            "idModalReviews": "modalReviews2",
-            "linkCompra": "comprar.php?id=2",
-            "estado": "En carrito",
-            "fechaAgregado": "2023-11-30"
-        },
-        {
-            "nombre": "Temson",
-            "precio": "$549.99",
-            "descripcion": "Teamson Design VN-L00013 Versanora...",
-            "imagen": "imagenes/temson.jpg",
-            "idModal": "modal3",
-            "idModalReviews": "modalReviews2",
-            "linkCompra": "comprar.php?id=2",
-            "estado": "En carrito",
-            "fechaAgregado": "2023-11-30"
-        }
-        // Puedes agregar más productos aquí
-    ]
-};
+    <h1 >Carrito de Compras</h1>
 
-// Función para renderizar los elementos del carrito
-function renderizarElementosCarrito(datosCarrito) {
-    var contenedor = document.getElementById('contenedor-carrito');
+    <!-- Producto 1: Paneles Decorativos 3D -->
+    <div class="item-carrito">
+        <img src="imagenes/paneles.jpg" alt="Paneles Decorativos 3D">
+        <h2>Paneles</h2>
+        <p>Descripción: Paneles Decorativos 3D...</p>
+        <p>Precio: $1092.99</p>
+        <p>Estado: En carrito</p>
+        <p>Fecha Agregado: 2023-11-30</p>
+        <button class="comprar-ahora-btn" onclick="window.location.href='comprar.php?id=1'">Comprar ahora</button>
+    </div>
 
-    // Limpiar el contenedor
-    contenedor.innerHTML = '';
+    <div class="item-carrito">
+        <img src="imagenes/led.jpg" alt="Lámpara LED de pared moderna ">
+        <h2>Lampara Led</h2>
+        <p>Descripción: Lámpara LED de pared moderna con visualización de vidrio...</p>
+        <p>Precio: $189.99</p>
+        <p>Estado: En carrito</p>
+        <p>Fecha Agregado: 2023-11-28</p>
+        <button class="comprar-ahora-btn" onclick="window.location.href='comprar.php?id=1'">Comprar ahora</button>
+    </div>
 
-    // Recorrer cada elemento del carrito y crear el HTML
-    datosCarrito.carrito.forEach(function(producto) {
-        var tarjeta = document.createElement('div');
-        tarjeta.className = 'item-carrito';
-        tarjeta.innerHTML = `
-            <h2>${producto.nombre}</h2>
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-            <p>${producto.descripcion}</p>
-            <p>Precio: ${producto.precio}</p>
-            <p>Estado: ${producto.estado}</p>
-            <p>Agregado el: ${producto.fechaAgregado}</p>
-            <a href="${producto.linkCompra}">Comprar ahora</a>
-        `;
-        contenedor.appendChild(tarjeta);
-    });
-}
+    <div class="item-carrito">
+        <img src="imagenes/jarron.jpg" alt="Juego de jarrón de cerámica Blanca">
+        <h2>Paneles</h2>
+        <p>Descripción: Juego de jarrón de cerámica Blanca, 3 jarrones pequeños para...</p>
+        <p>Precio: $360.99</p>
+        <p>Estado: En carrito</p>
+        <p>Fecha Agregado: 2023-11-27</p>
+        <button class="comprar-ahora-btn" onclick="window.location.href='comprar.php?id=1'">Comprar ahora</button>
+    </div>
 
-// Llamar a la función para renderizar los elementos
-renderizarElementosCarrito(datosCarrito);
-</script>
+    <!-- Agrega aquí para más productos del carrito  -->
 
 </body>
+
+</html>
 </html>
