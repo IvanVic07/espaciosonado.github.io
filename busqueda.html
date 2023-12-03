@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tienda en Línea</title>
+    <style>
+        /* Aquí puedes agregar tus estilos CSS */
+        .producto {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            float: left;
+            width: 300px;
+        }
+        .producto img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <input type="text" id="barraBusqueda" placeholder="Buscar productos...">
+    <select id="ordenarProductos">
+        <option value="alfabetico">Orden Alfabético</option>
+        <option value="alfabetico_reves">Orden Alfabético Inverso</option>
+        <option value="precio_alto">Precio Más Alto</option>
+        <option value="precio_bajo">Precio Más Bajo</option>
+    </select>
+</div>
+
+<div id="contenedorProductos">
+    <!-- Los productos se cargarán aquí -->
+</div>
+
+<script>
+    // Aquí van los scripts para la carga y ordenamiento de productos
+    let productos = []; // Array para almacenar los productos
+
+    // Función para cargar productos
+    function cargarProductos() {
+        productos = [
+        {
+                    "nombre": "Alfombra",
+                    "precio": "$299.99",
+                    "descripcion": "Alfombra redonda irregular, antideslizante...",
+                    "imagen": "imagenes/alfombra.jpg",
+                    "idModal": "modal1",
+                    "idModalReviews": "modalReviews1",
+                    "linkCompra": "pago.html"
+                },
+                {
+                    "nombre": "Cabecero Flotante",
+                    "precio": "$800.99",
+                    "descripcion": "Cabecero flotante tapizado para cama de dormitorio...",
+                    "imagen": "imagenes/cabecero.jpg",
+                    "idModal": "modal2",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                {
+                    "nombre": "Cortinas",
+                    "precio": "$479.99",
+                    "descripcion": "Cortinas de terciopelo rosa polvoriento...",
+                    "imagen": "imagenes/cortinas.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                {
+                    "nombre": "Reloj",
+                    "precio": "$99.99",
+                    "descripcion": "Reloj de Pared Minimalista Interior Decorativo de...",
+                    "imagen": "imagenes/reloj.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "pago.html"
+                },
+                {
+                    "nombre": "Lchan Lampara",
+                    "precio": "$544.99",
+                    "descripcion": "Lamparas Colgante de Techo Rustica 3 Unidades...",
+                    "imagen": "imagenes/lchan.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                {
+                    "nombre": "Paneles",
+                    "precio": "$1092.99",
+                    "descripcion": "Paneles Decorativos 3D...",
+                    "imagen": "imagenes/paneles.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                {
+                    "nombre": "Lampara Led",
+                    "precio": "$189.99",
+                    "descripcion": "Lámpara LED de pared moderna con visualización de vidrio...",
+                    "imagen": "imagenes/led.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                {
+                    "nombre": "Jarron",
+                    "precio": "$360.99",
+                    "descripcion": "Juego de jarrón de cerámica Blanca, 3 jarrones pequeños para...",
+                    "imagen": "imagenes/jarron.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                {
+                    "nombre": "Temson",
+                    "precio": "$549.99",
+                    "descripcion": "Teamson Design VN-L00013 Versanora...",
+                    "imagen": "imagenes/temson.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                {
+                    "nombre": "Lampara",
+                    "precio": "$420.99",
+                    "descripcion": "Lámpara de Techo para Interior de Casas Beid...",
+                    "imagen": "imagenes/lampara.jpg",
+                    "idModal": "modal3",
+                    "idModalReviews": "modalReviews2",
+                    "linkCompra": "comprar.php?id=2"
+                },
+                
+        ];
+        mostrarProductos(productos);
+    }
+
+    // Función para mostrar productos
+    function mostrarProductos(productos) {
+        const contenedor = document.getElementById('contenedorProductos');
+        contenedor.innerHTML = '';
+        productos.forEach(producto => {
+            const divProducto = document.createElement('div');
+            divProducto.className = 'producto';
+            divProducto.innerHTML = `
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <h2>${producto.nombre}</h2>
+                <p>${producto.descripcion}</p>
+                <p>Precio: ${producto.precio}</p>
+            `;
+            contenedor.appendChild(divProducto);
+        });
+    }
+
+    // Función para buscar productos
+    function buscarProductos() {
+        const textoBusqueda = document.getElementById('barraBusqueda').value.toLowerCase();
+        const productosFiltrados = productos.filter(producto => 
+            producto.nombre.toLowerCase().includes(textoBusqueda) ||
+            producto.descripcion.toLowerCase().includes(textoBusqueda)
+        );
+        mostrarProductos(productosFiltrados);
+    }
+
+    // Función para ordenar productos
+    function ordenarProductos() {
+        const criterio = document.getElementById('ordenarProductos').value;
+        let productosOrdenados = [];
+        switch (criterio) {
+            case 'alfabetico':
+                productosOrdenados = [...productos].sort((a, b) => a.nombre.localeCompare(b.nombre));
+                break;
+            case 'alfabetico_reves':
+                productosOrdenados = [...productos].sort((a, b) => b.nombre.localeCompare(a.nombre));
+                break;
+            case 'precio_alto':
+                productosOrdenados = [...productos].sort((a, b) => parseFloat(b.precio.substring(1)) - parseFloat(a.precio.substring(1)));
+                break;
+            case 'precio_bajo':
+                productosOrdenados = [...productos].sort((a, b) => parseFloat(a.precio.substring(1)) - parseFloat(b.precio.substring(1)));
+                break;
+            default:
+                productosOrdenados = productos;
+        }
+        mostrarProductos(productosOrdenados);
+    }
+
+    // Event listeners para la barra de búsqueda y el menú desplegable
+    document.getElementById('barraBusqueda').addEventListener('input', buscarProductos);
+    document.getElementById('ordenarProductos').addEventListener('change', ordenarProductos);
+
+    // Cargar productos al cargar la página
+    window.onload = cargarProductos;
+</script>
+
+</body>
+</html>
