@@ -3,12 +3,35 @@
 <head>
     <title>Tienda en Línea</title>
     <style>
-        /* Aquí puedes agregar tus estilos CSS */
+        /* estilos menu */
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        header ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        header li {
+            margin-right: 20px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Helvetica', sans-serif;
+        }
+        /* estilos CSS */
         .producto {
             border: 1px solid #ddd;
             padding: 10px;
             margin: 10px;
-            float: left;
+            float: center;
             width: 300px;
         }
         .producto img {
@@ -18,6 +41,11 @@
     </style>
 </head>
 <body>
+    <header>
+        <ul>
+            <li><a href="index.html">Volver</a></li>
+        </ul>
+    </header>
 
 <div>
     <input type="text" id="barraBusqueda" placeholder="Buscar productos...">
