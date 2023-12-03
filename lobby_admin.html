@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <title>Lobby del Administrador</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script>
-        function redirectToAgregarProductos() {
-            // Redirige a la página de agregar productos
-            window.location.href = "agregar_producto.html";
-        }
-    </script>
     <style>
         body {
             margin: 0;
@@ -56,11 +50,24 @@
 <body>
     <div class="lobby-container">
         <div class="sidebar">
-            <button class="sidebar-button">Dashboard</button>
-            <button class="sidebar-button">Usuarios</button>
+            <button class="sidebar-button">Tablero</button>
+            <button class="sidebar-button" onclick="location.href='agregar_usuarios.html'">Usuarios</button>
             <button class="sidebar-button">Productos</button>
             <button class="sidebar-button">Configuración</button>
-            <button onclick="redirectToAgregarProductos()">Agregar Productos</button>
+            <button class="sidebar-button" onclick="location.href='agregar_producto.html'">Agregar Productos</button>
+            <button class="sidebar-button">Mi Catálogo</button>
+            <button class="sidebar-button">Pedidos</button>
+            <button class="sidebar-button">Clientes</button>
+            <button class="sidebar-button">Módulos y Servicios</button>
+            <button class="sidebar-button">Reglas de Precios</button>
+            <button class="sidebar-button">Envíos</button>
+            <button class="sidebar-button">Preferencias</button>
+            <button class="sidebar-button">Localización</button>
+            <button class="sidebar-button">Parámetros Avanzados</button>
+            <button class="sidebar-button">Estadísticas</button>
+            <button class="sidebar-button">Administración</button>
+            <button class="sidebar-button">Stock</button>
+            <button class="sidebar-button">Instalar Datos de Ejemplo</button>
         </div>
         <div class="main-content">
             <h2>Bienvenido al Lobby del Administrador</h2>
