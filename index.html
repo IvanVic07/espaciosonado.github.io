@@ -731,6 +731,190 @@
     </div>
   </div>
 
+    <!-- Tu contenido existente aquí -->
+
+<!-- Modal de Reseñas -->
+<div id="modalReviews1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalReviews1')">&times;</span>
+        <div class="modal-body">
+            <h2>Reseñas del Producto</h2>
+            <ul id="productReviews">
+                <!-- Aquí se mostrarán las reseñas del producto -->
+            </ul>
+            <h3>Agregar una Reseña</h3>
+            <input type="text" id="reviewName" placeholder="Tu nombre">
+            <input type="number" id="reviewRating" min="1" max="5" placeholder="Calificación (1-5)">
+            <textarea id="reviewComment" placeholder="Tu comentario"></textarea>
+            <button onclick="addReview('1')">Agregar Reseña</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Resto de tu contenido aquí -->
+
+<!-- Footer, Scripts y cierre de etiquetas -->
+<script>
+    // Tu código JavaScript existente aquí
+
+    // Datos predefinidos de reseñas
+    var reviewsData = {
+        "1": [
+            { name: "Rogelio Mendoza", rating: 5, review: "¡Excelente producto, muy cómodo y de buena calidad!" },
+            { name: "Maria Alvarez", rating: 4, review: "Me encantó, se ve exactamente como en la imagen." }
+        ],
+        // Agrega más reseñas para otros productos si es necesario
+    };
+
+    // Función para abrir el modal de reseñas
+    function openReviewsModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "block";
+
+        var reviewsList = document.getElementById('productReviews');
+        reviewsList.innerHTML = ''; // Borra reseñas previas si las hay
+
+        var productId = modalId.replace('modalReviews', '1'); // Extrae el ID del producto del ID del modal
+        var productReviews = reviewsData[productId];
+
+        if (productReviews) {
+            productReviews.forEach(function (reviewData) {
+                var li = document.createElement('li');
+                li.innerHTML = "<b>" + reviewData.name + "</b> - Calificación: " + getStars(reviewData.rating) + " - " + reviewData.review;
+                reviewsList.appendChild(li);
+            });
+        } else {
+            var noReviews = document.createElement('li');
+            noReviews.textContent = "No hay reseñas disponibles para este producto.";
+            reviewsList.appendChild(noReviews);
+        }
+    }
+
+    // Función para agregar una nueva reseña
+    function addReview(productId) {
+        var name = document.getElementById('reviewName').value;
+        var rating = document.getElementById('reviewRating').value;
+        var comment = document.getElementById('reviewComment').value;
+
+        if (name && rating && comment) {
+            var newReview = { name: name, rating: parseInt(rating), review: comment };
+            reviewsData[productId].push(newReview);
+
+            // Actualizar la lista de reseñas
+            openReviewsModal('modalReviews' + productId);
+
+            // Limpiar el formulario
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewRating').value = '';
+            document.getElementById('reviewComment').value = '';
+        } else {
+            alert("Por favor, completa todos los campos para añadir una reseña.");
+        }
+    }
+
+    // Función para convertir calificación numérica a estrellas
+    function getStars(rating) {
+        var stars = '';
+        for (var i = 0; i < rating; i++) {
+            stars += '⭐';
+        }
+        return stars;
+    }
+
+    
+</script>
+
+<div id="modalReviews2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalReviews2')">&times;</span>
+        <div class="modal-body">
+            <h2>Reseñas del Producto</h2>
+            <ul id="productReviews">
+                <!-- Aquí se mostrarán las reseñas del producto -->
+            </ul>
+            <h3>Agregar una Reseña</h3>
+            <input type="text" id="reviewName" placeholder="Tu nombre">
+            <input type="number" id="reviewRating" min="1" max="5" placeholder="Calificación (1-5)">
+            <textarea id="reviewComment" placeholder="Tu comentario"></textarea>
+            <button onclick="addReview('1')">Agregar Reseña</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Resto de tu contenido aquí -->
+
+<!-- Footer, Scripts y cierre de etiquetas -->
+<script>
+    // Tu código JavaScript existente aquí
+
+    // Datos predefinidos de reseñas
+    var reviewsData = {
+        "1": [
+            { name: "Rogelio Mendoza", rating: 5, review: "¡Excelente producto, muy cómodo y de buena calidad!" },
+            { name: "Maria Alvarez", rating: 4, review: "Me encantó, se ve exactamente como en la imagen." }
+        ],
+        // Agrega más reseñas para otros productos si es necesario
+    };
+
+    // Función para abrir el modal de reseñas
+    function openReviewsModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "block";
+
+        var reviewsList = document.getElementById('productReviews');
+        reviewsList.innerHTML = ''; // Borra reseñas previas si las hay
+
+        var productId = modalId.replace('modalReviews', ''); // Extrae el ID del producto del ID del modal
+        var productReviews = reviewsData[productId];
+
+        if (productReviews) {
+            productReviews.forEach(function (reviewData) {
+                var li = document.createElement('li');
+                li.innerHTML = "<b>" + reviewData.name + "</b> - Calificación: " + getStars(reviewData.rating) + " - " + reviewData.review;
+                reviewsList.appendChild(li);
+            });
+        } else {
+            var noReviews = document.createElement('li');
+            noReviews.textContent = "No hay reseñas disponibles para este producto.";
+            reviewsList.appendChild(noReviews);
+        }
+    }
+
+    // Función para agregar una nueva reseña
+    function addReview(productId) {
+        var name = document.getElementById('reviewName').value;
+        var rating = document.getElementById('reviewRating').value;
+        var comment = document.getElementById('reviewComment').value;
+
+        if (name && rating && comment) {
+            var newReview = { name: name, rating: parseInt(rating), review: comment };
+            reviewsData[productId].push(newReview);
+
+            // Actualizar la lista de reseñas
+            openReviewsModal('modalReviews' + productId);
+
+            // Limpiar el formulario
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewRating').value = '';
+            document.getElementById('reviewComment').value = '';
+        } else {
+            alert("Por favor, completa todos los campos para añadir una reseña.");
+        }
+    }
+
+    // Función para convertir calificación numérica a estrellas
+    function getStars(rating) {
+        var stars = '';
+        for (var i = 0; i < rating; i++) {
+            stars += '⭐';
+        }
+        return stars;
+    }
+
+    
+</script>
 </body>
 <script>
     // Función para abrir la ventana modal
@@ -761,62 +945,5 @@ function addToCart() {
 }
 </script>
 
-<div id="modalReviews1" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modalReviews1')">&times;</span>
-        <div class="modal-body">
-            <h2>Reseñas del Producto</h2>
-            <ul id="productReviews">
-                <!-- Aquí se mostrarán las reseñas del producto -->
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    // Función para abrir el modal de reseñas
-    function openReviewsModal(modalId) {
-        var modal = document.getElementById(modalId);
-        modal.style.display = "block";
-
-        // Aquí deberías cargar las reseñas del producto específico
-        // Este es un ejemplo estático, podrías cargar las reseñas desde una fuente de datos real
-        var reviewsData = {
-    "1": [
-        { name: "Rogelio Mendoza", rating: 5, review: "¡Excelente producto, muy cómodo y de buena calidad!" },
-        { name: "Maria Alvarez", rating: 4, review: "Me encantó, se ve exactamente como en la imagen." }
-    ],
-    // Agrega más reseñas para otros productos si es necesario
-};
-
-        var reviewsList = document.getElementById('productReviews');
-        reviewsList.innerHTML = ''; // Borra reseñas previas si las hay
-
-        var productId = modalId.replace('modalReviews', ''); // Extrae el ID del producto del ID del modal
-        var productReviews = reviewsData[productId];
-
-        if (productReviews) {
-            productReviews.forEach(function(reviewData) {
-                var li = document.createElement('li');
-                li.textContent = reviewData.name + " - Calificación: " + reviewData.rating + "/5 - " + reviewData.review;
-                reviewsList.appendChild(li);
-            });
-        } else {
-            var noReviews = document.createElement('li');
-            noReviews.textContent = "No hay reseñas disponibles para este producto.";
-            reviewsList.appendChild(noReviews);
-        }
-    }
-
-    $(document).ready(function(){
-        // Mostrar el modal al cargar la página
-        $('#cookieModal').modal('show');
-
-        // Función para ocultar el modal
-        window.hideCookieModal = function() {
-            $('#cookieModal').modal('hide');
-        }
-    });
-</script>
 
 </html>
