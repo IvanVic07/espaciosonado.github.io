@@ -67,6 +67,39 @@
 
         .card-body {
             padding: 2px 16px;
+
+        }
+         /* Estilos adicionales para los botones y alineación */
+         .btn-minimalista {
+            border: none;
+            outline: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px; /* Espaciado entre botones */
+        }
+
+        .btn-anadir {
+            background-color: #069a55;
+            color: white;
+        }
+
+        .btn-anadir:hover {
+            background-color: #00b374;
+        }
+
+        .btn-eliminar {
+            background-color: #9c9899;
+            color: white;
+        }
+
+        .btn-eliminar:hover {
+            background-color: #f5d6d9;
+        }
+
+        .card-body {
+            text-align: center; 
         }
     </style>
 </head>
@@ -75,8 +108,7 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
         <li><a href="lista_deseos.html">Lista de Deseos</a></li>
-        <!-- ... otros elementos del menú ... -->
-        <li class="cart-item"><a href="carrito.html">Carrito</a></li>
+        <li class="cart-item"><a href="Carrito.html"><img src="imagenes/carrito.jfif" alt="Carrito" style="height:24px;"></a></li>
     </ul>
 
     <h1>Mi Lista de Deseos</h1>
@@ -117,27 +149,39 @@
             const contenedor = document.getElementById('listaDeseos');
             contenedor.innerHTML = '<div class="card-container">';
 
-            productos.forEach(producto => {
-                contenedor.querySelector('.card-container').innerHTML += generarHTMLProducto(producto);
+            productos.forEach((producto, index) => {
+                contenedor.querySelector('.card-container').innerHTML += generarHTMLProducto(producto, index);
             });
 
             contenedor.innerHTML += '</div>';
         }
 
-        function generarHTMLProducto(producto) {
+        function generarHTMLProducto(producto, index) {
             return `
-                <div class="card">
+                <div class="card" id="card-${index}">
                     <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                     <div class="card-body">
-                        <h5 class="card-title">${producto.nombre}</h5>
+                        <h1 class="card-title">${producto.nombre}</h1>
                         <p class="card-text">
                             <strong>${producto.precio}</strong><br>
                             ${producto.descripcion}
                         </p>
-                        <button type="button" class="btn btn-primary">Añadir al Carrito</button>
+                        <button type="button" class="btn-minimalista btn-anadir" onclick="anadirAlCarrito('${producto.nombre}')">Añadir al Carrito</button>
+                        <button type="button" class="btn-minimalista btn-eliminar" onclick="eliminarProducto(${index})">Eliminar de Lista de Deseos</button>
                     </div>
                 </div>
             `;
+        }
+
+        function anadirAlCarrito(nombreProducto) {
+            alert('Se agregó con éxito al carrito: ' + nombreProducto);
+        }
+
+        function eliminarProducto(index) {
+            var elementoAEliminar = document.getElementById('card-' + index);
+            if (elementoAEliminar) {
+                elementoAEliminar.remove();
+            }
         }
     </script>
 </body>
