@@ -19,6 +19,14 @@
                 <label for="emailUsuario" class="form-label">Email</label>
                 <input type="email" class="form-control" id="emailUsuario" placeholder="Ingresa el email del usuario">
             </div>
+            <div class="mb-3">
+                <label for="direccionUsuario" class="form-label">Dirección del Usuario</label>
+                <input type="text" class="form-control" id="direccionUsuario" placeholder="Ingresa la dirección del usuario">
+            </div>
+            <div class="mb-3">
+                <label for="telefonoUsuario" class="form-label">Teléfono del Usuario</label>
+                <input type="tel" class="form-control" id="telefonoUsuario" placeholder="Ingresa el teléfono del usuario">
+            </div>
             <button type="button" class="btn btn-primary" onclick="agregarUsuario()">Agregar</button>
         </form>
     </div>
@@ -32,6 +40,8 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
                     <th>Borrar</th>
                 </tr>
             </thead>
@@ -62,6 +72,14 @@
                             <label for="emailUsuarioEditar" class="form-label">Email del Usuario</label>
                             <input type="email" class="form-control" id="emailUsuarioEditar">
                         </div>
+                        <div class="mb-3">
+                            <label for="direccionUsuarioEditar" class="form-label">Dirección del Usuario</label>
+                            <input type="text" class="form-control" id="direccionUsuarioEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefonoUsuarioEditar" class="form-label">Teléfono del Usuario</label>
+                            <input type="tel" class="form-control" id="telefonoUsuarioEditar">
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -71,7 +89,6 @@
             </div>
         </div>
     </div>
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 
@@ -81,8 +98,10 @@
         function agregarUsuario() {
             var nombreUsuario = document.getElementById("nombreUsuario").value;
             var emailUsuario = document.getElementById("emailUsuario").value;
+            var direccionUsuario = document.getElementById("direccionUsuario").value;
+            var telefonoUsuario = document.getElementById("telefonoUsuario").value;
 
-            if (nombreUsuario === "" || emailUsuario === "") {
+            if (nombreUsuario === "" || emailUsuario === "" || direccionUsuario === "" || telefonoUsuario === "") {
                 alert("Por favor, completa todos los campos para agregar al usuario.");
                 return;
             }
@@ -101,13 +120,17 @@
             var usuario = {
                 id: proximoID,
                 nombre: nombreUsuario,
-                email: emailUsuario
+                email: emailUsuario,
+                direccion: direccionUsuario,
+                telefono: telefonoUsuario
             };
 
             usuarios.push(usuario);
 
             document.getElementById("nombreUsuario").value = "";
             document.getElementById("emailUsuario").value = "";
+            document.getElementById("direccionUsuario").value = "";
+            document.getElementById("telefonoUsuario").value = "";
 
             actualizarTablaUsuarios();
         }
@@ -120,14 +143,16 @@
             if (usuario) {
                 document.getElementById("nombreUsuarioEditar").value = usuario.nombre;
                 document.getElementById("emailUsuarioEditar").value = usuario.email;
-                document.getElementById("editarModal").setAttribute("data-usuario-id", usuario.id);
+                document.getElementById("direccionUsuarioEditar").value = usuario.direccion;
+                document.getElementById("telefonoUsuarioEditar").value = usuario.telefono;
+                document.getElementById("idUsuarioEditar").value = usuario.id;
                 var editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
                 editarModal.show();
             }
         }
 
         function guardarEdicionUsuario() {
-            var usuarioId = parseInt(document.getElementById("editarModal").getAttribute("data-usuario-id"));
+            var usuarioId = parseInt(document.getElementById("idUsuarioEditar").value);
             var usuario = usuarios.find(function(u) {
                 return u.id === usuarioId;
             });
@@ -135,6 +160,8 @@
             if (usuario) {
                 usuario.nombre = document.getElementById("nombreUsuarioEditar").value;
                 usuario.email = document.getElementById("emailUsuarioEditar").value;
+                usuario.direccion = document.getElementById("direccionUsuarioEditar").value;
+                usuario.telefono = document.getElementById("telefonoUsuarioEditar").value;
                 var editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
                 editarModal.hide();
                 actualizarTablaUsuarios();
@@ -161,11 +188,16 @@
                 var cellId = fila.insertCell(1);
                 var cellNombre = fila.insertCell(2);
                 var cellEmail = fila.insertCell(3);
-                var cellBorrar = fila.insertCell(4);
+                var cellDireccion = fila.insertCell(4);
+                var cellTelefono = fila.insertCell(5);
+                var cellBorrar = fila.insertCell(6);
+
                 cellEditar.innerHTML = '<button class="btn btn-warning" onclick="editarUsuario(' + usuario.id + ')">Editar</button>';
                 cellId.innerHTML = usuario.id;
                 cellNombre.innerHTML = usuario.nombre;
                 cellEmail.innerHTML = usuario.email;
+                cellDireccion.innerHTML = usuario.direccion;
+                cellTelefono.innerHTML = usuario.telefono;
                 cellBorrar.innerHTML = '<button class="btn btn-danger" onclick="eliminarUsuario(' + usuario.id + ')">Borrar</button>';
             });
         }
