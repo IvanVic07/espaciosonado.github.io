@@ -22,7 +22,7 @@
         }
 
         header a {
-            color: white;
+            color: rgb(231, 225, 225);
             text-decoration: none;
             font-family: 'Helvetica', sans-serif;
         }
@@ -38,6 +38,58 @@
             width: 100%;
             height: auto;
         }
+
+        /* Estilos Generales */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+div {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para la Barra de Búsqueda */
+#barraBusqueda {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilos para el Selector */
+#ordenarProductos {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Estilos para la interacción con el usuario */
+#barraBusqueda:hover,
+#ordenarProductos:hover {
+    border-color: #bbb;
+}
+
+#barraBusqueda:focus,
+#ordenarProductos:focus {
+    border-color: #888;
+    outline: none;
+}
+
     </style>
 </head>
 <body>
