@@ -89,6 +89,24 @@ div {
     border-color: #888;
     outline: none;
 }
+/* Estilos para el botón "Comprar" */
+.comprar-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #4CAF50; /* Color verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.comprar-btn:hover {
+    background-color: #45a049; /* Cambia de color al pasar el cursor */
+}
 
     </style>
 </head>
@@ -121,7 +139,7 @@ div {
     function cargarProductos() {
         productos = [
         {
-                    "nombre": "Alfombra",
+                    "nombre": "Alfombra Novoli Irregular",
                     "precio": "$299.99",
                     "descripcion": "Alfombra redonda irregular, antideslizante...",
                     "imagen": "imagenes/alfombra.jpg",
@@ -130,31 +148,31 @@ div {
                     "linkCompra": "pago.html"
                 },
                 {
-                    "nombre": "Cabecero Flotante",
+                    "nombre": "Cabecero Flotante Queen Acojinado",
                     "precio": "$800.99",
                     "descripcion": "Cabecero flotante tapizado para cama de dormitorio...",
                     "imagen": "imagenes/cabecero.jpg",
                     "idModal": "modal2",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago2.html"
                 },
                 {
-                    "nombre": "Cortinas",
+                    "nombre": "Cortinas Homeideas Rosa",
                     "precio": "$479.99",
                     "descripcion": "Cortinas de terciopelo rosa polvoriento...",
                     "imagen": "imagenes/cortinas.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago3.html"
                 },
                 {
-                    "nombre": "Reloj",
+                    "nombre": "Deryang Reloj de Pared",
                     "precio": "$99.99",
                     "descripcion": "Reloj de Pared Minimalista Interior Decorativo de...",
                     "imagen": "imagenes/reloj.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "pago.html"
+                    "linkCompra": "pago4.html"
                 },
                 {
                     "nombre": "Lchan Lampara",
@@ -163,16 +181,16 @@ div {
                     "imagen": "imagenes/lchan.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago5.html"
                 },
                 {
-                    "nombre": "Paneles",
+                    "nombre": "Paneles Decorativos",
                     "precio": "$1092.99",
                     "descripcion": "Paneles Decorativos 3D...",
                     "imagen": "imagenes/paneles.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago6.html"
                 },
                 {
                     "nombre": "Lampara Led",
@@ -181,34 +199,34 @@ div {
                     "imagen": "imagenes/led.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago7.html"
                 },
                 {
-                    "nombre": "Jarron",
+                    "nombre": "Jarron de ceramica",
                     "precio": "$360.99",
                     "descripcion": "Juego de jarrón de cerámica Blanca, 3 jarrones pequeños para...",
                     "imagen": "imagenes/jarron.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago8.html"
                 },
                 {
-                    "nombre": "Temson",
+                    "nombre": "Temson de lectura",
                     "precio": "$549.99",
                     "descripcion": "Teamson Design VN-L00013 Versanora...",
                     "imagen": "imagenes/temson.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago9.html"
                 },
                 {
-                    "nombre": "Lampara",
+                    "nombre": "Lampara de techo",
                     "precio": "$420.99",
                     "descripcion": "Lámpara de Techo para Interior de Casas Beid...",
                     "imagen": "imagenes/lampara.jpg",
                     "idModal": "modal3",
                     "idModalReviews": "modalReviews2",
-                    "linkCompra": "comprar.php?id=2"
+                    "linkCompra": "pago10.html"
                 },
                 
         ];
@@ -231,6 +249,33 @@ div {
             contenedor.appendChild(divProducto);
         });
     }
+            // Función para mostrar productos
+            function mostrarProductos(productos) {
+            const contenedor = document.getElementById('contenedorProductos');
+            contenedor.innerHTML = '';
+            productos.forEach(producto => {
+                const divProducto = document.createElement('div');
+                divProducto.className = 'producto';
+                divProducto.innerHTML = `
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <h2>${producto.nombre}</h2>
+                    <p>${producto.descripcion}</p>
+                    <p>Precio: ${producto.precio}</p>
+                    <button class="comprar-btn" data-linkcompra="${producto.linkCompra}">Comprar</button>
+                `;
+                contenedor.appendChild(divProducto);
+            });
+            
+            // Agregar manejador de eventos a los botones "Comprar"
+            const comprarButtons = document.querySelectorAll('.comprar-btn');
+            comprarButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const linkCompra = button.getAttribute('data-linkcompra');
+                    window.location.href = linkCompra;
+                });
+            });
+        }
+
 
     // Función para buscar productos
     function buscarProductos() {
