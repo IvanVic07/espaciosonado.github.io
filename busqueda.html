@@ -89,6 +89,24 @@ div {
     border-color: #888;
     outline: none;
 }
+/* Estilos para el botón "Comprar" */
+.comprar-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #4CAF50; /* Color verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.comprar-btn:hover {
+    background-color: #45a049; /* Cambia de color al pasar el cursor */
+}
 
     </style>
 </head>
@@ -231,6 +249,33 @@ div {
             contenedor.appendChild(divProducto);
         });
     }
+            // Función para mostrar productos
+            function mostrarProductos(productos) {
+            const contenedor = document.getElementById('contenedorProductos');
+            contenedor.innerHTML = '';
+            productos.forEach(producto => {
+                const divProducto = document.createElement('div');
+                divProducto.className = 'producto';
+                divProducto.innerHTML = `
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <h2>${producto.nombre}</h2>
+                    <p>${producto.descripcion}</p>
+                    <p>Precio: ${producto.precio}</p>
+                    <button class="comprar-btn" data-linkcompra="${producto.linkCompra}">Comprar</button>
+                `;
+                contenedor.appendChild(divProducto);
+            });
+            
+            // Agregar manejador de eventos a los botones "Comprar"
+            const comprarButtons = document.querySelectorAll('.comprar-btn');
+            comprarButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const linkCompra = button.getAttribute('data-linkcompra');
+                    window.location.href = linkCompra;
+                });
+            });
+        }
+
 
     // Función para buscar productos
     function buscarProductos() {
